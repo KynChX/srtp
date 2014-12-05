@@ -13,6 +13,7 @@
         android:id="@+id/et_no"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="20126388"
         android:ems="10"
         android:hint="学号" >
 
@@ -23,6 +24,7 @@
         android:id="@+id/et_pwd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="235710"
         android:ems="10"
         android:hint="密码"
         android:inputType="textPassword" />

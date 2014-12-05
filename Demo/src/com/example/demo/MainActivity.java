@@ -160,7 +160,7 @@ public class MainActivity extends Activity {
 							Intent intent = new Intent(MainActivity.this,
 									newActivity.class);
 
-							intent.putExtra("shedule", filterHtml(responseHtml));
+							intent.putExtra("shedule", responseHtml);
 							startActivity(intent);
 							
 							bt_login.setClickable(false);
@@ -198,23 +198,8 @@ public class MainActivity extends Activity {
 
 	}
 
-	// 在这里解析html
-	private String filterHtml(String source) {
-		if (null == source) {
-			return "";
-		}
-		StringBuffer sff = new StringBuffer();
 
-		String html = source;
-		Document doc = Jsoup.parse(html); // 把HTML代码加载到doc中
-
-		Elements links_class = doc.select("td");
-		for (Element link : links_class) {
-			sff.append(link.text());
-		}
-		return sff.toString();
-	}
-
+	//这里通过Jsoup解析返回的html来判断是否登陆成功
 	private Boolean isLoginSuccess(String source) {
 		if (null == source) {
 			return false;
